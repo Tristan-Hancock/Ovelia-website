@@ -53,14 +53,47 @@ const InformationSection = () => {
           Read More about Our Dashboards Detailed Features Here
         </div>
 
-        <div className="bg-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-200 p-4 rounded-lg xl:w-[70%] mt-16">
           <div className="grid lg:grid-cols-2 grid-cols-1">
-            <div className="flex flex-col">
-              <div className="flex flex-row">
-                <div className="bg-purple-500 text-white size-8 flex items-center justify-center rounded-full">1</div>
-                <div className="flex flex-col">
-                  <p>Feature 1</p>
-                  <p>
+            <div className="flex flex-col p-3">
+              <div className="flex flex-row mt-5">
+                <div className="bg-purple-500 text-white size-6 flex items-center justify-center rounded-full px-2">1</div>
+                <div className="flex flex-col ml-2">
+                  <p className="font-semibold text-xl">Feature 1</p>
+                  <p className="text-gray-800 text-lg">
+                    Feature 1 Description Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quos, rem?
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-row mt-5">
+                <div className="bg-purple-500 text-white size-6 flex items-center justify-center rounded-full px-2">1</div>
+                <div className="flex flex-col ml-2">
+                  <p className="font-semibold text-xl">Feature 1</p>
+                  <p className="text-gray-800 text-lg">
+                    Feature 1 Description Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quos, rem?
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-row mt-5">
+                <div className="bg-purple-500 text-white size-6 flex items-center justify-center rounded-full px-2">1</div>
+                <div className="flex flex-col ml-2">
+                  <p className="font-semibold text-xl">Feature 1</p>
+                  <p className="text-gray-800 text-lg">
+                    Feature 1 Description Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quos, rem?
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-row mt-5">
+                <div className="bg-purple-500 text-white size-6 flex items-center justify-center rounded-full px-2">1</div>
+                <div className="flex flex-col ml-2">
+                  <p className="font-semibold text-xl">Feature 1</p>
+                  <p className="text-gray-800 text-lg">
                     Feature 1 Description Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Quos, rem?
                   </p>
