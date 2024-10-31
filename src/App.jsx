@@ -1,7 +1,14 @@
+import Navbar from "./components/Navbar"
+import HeroSection from "./components/HeroSection"
+import AboutSection from "./components/AboutSection"
+import InformationSection from "./components/InformationSection"
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+  <>
+    <Navbar/>
+    <HeroSection/>
+    <AboutSection/>
+    <InformationSection/>
+  </>
   )
 }
