@@ -1,14 +1,21 @@
-import Navbar from "./components/Navbar"
-import HeroSection from "./components/HeroSection"
-import AboutSection from "./components/AboutSection"
-import InformationSection from "./components/InformationSection"
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Newsletter from "./pages/Newsletter";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+
+
 export default function App() {
   return (
-  <>
-    <Navbar/>
-    <HeroSection/>
-    <AboutSection/>
-    <InformationSection/>
-  </>
-  )
+    <>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+      </Routes>
+    </>
+  );
 }
