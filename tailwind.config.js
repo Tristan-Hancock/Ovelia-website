@@ -16,7 +16,8 @@ export default {
         dmSans: ['DM Sans', 'sans-serif'],
         quicksand: ['Quicksand', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
-        rubiks: ['Rubiks', 'sans-serif']
+        rubiks: ['Rubiks', 'sans-serif'],
+        lato: ['Lato','sans-serif']
       },
 
       fontSize: {
@@ -27,7 +28,8 @@ export default {
 
       backgroundImage: {
         'hero-gradient': 'linear-gradient(180deg, rgba(187,191,254,1) 0%, rgba(255,250,255,1) 50%)',
-        'radial-gradient': 'radial-gradient(circle, rgba(187,191,254,1) 0%, rgba(255,250,255,1) 50%);'
+        'radial-gradient': 'radial-gradient(circle, rgba(187,191,254,1) 0%, rgba(255,250,255,1) 50%);',
+        'custom-radial': 'radial-gradient(69.11% 74.11% at 50% 25.89%, #FFBCC5 0%, #FFFAFF 100%)',
       }
     },
   },
