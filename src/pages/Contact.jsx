@@ -2,13 +2,13 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="flex items-center justify-center bg-hero h-screen">
+    <div className="flex items-center justify-center bg-hero h-screen ">
       <div className="flex flex-col items-center justify-center text-center sm:-mt-14">
         <div className="flex flex-col items-center sm:w-[50%] p-2">
           <h1 className="text-button_white font-poppins text-4xl font-semibold mb-6">
             Get In Touch
           </h1>
-          <p className="text-button_white font-poppins text-xl font-normal">
+          <p className="text-button_white font-poppins text-xl font-normal p-5">
             Etiam ornare massa arcu, vitae pellentesque sapien tempor non. Ut ac
             arcu metus. Aenean nec neque felis. Fusce fermentum accumsan orci
             non posuere. Cras quis arcu feugiat, tincidunt justo quis, hendrerit

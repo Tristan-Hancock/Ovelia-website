@@ -1,15 +1,23 @@
-import React from "react";
-import achievement1 from "../assets/achievement_1.png";
-import achievement2 from "../assets/achievement_2.png";
-import appstore_svg from "../assets/appstore.svg";
-import playstore_svg from "../assets/playstore.svg";
-import placeholder from "../assets/placeholder_img.svg";
+import React , {useRef} from "react";
+import achievement1 from "../assets/images/achievement_1.png";
+import achievement2 from "../assets/images/achievement_2.png";
+import appstore_svg from "../assets/svg/appstore.svg";
+import playstore_svg from "../assets/svg/playstore.svg";
+import placeholder from "../assets/svg/placeholder_img.svg";
+import Footer from "../components/Footer";
 
 const Home = () => {
+
+  const getAppSectionRef = useRef(null);
+
+  const scrollToGetApp = () => {
+    getAppSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  
   return (
     <>
       {/* Hero Section */}
-      <div className="flex items-center justify-center min-h-screen bg-hero-gradient flex-col">
+      <section className="flex items-center justify-center min-h-screen bg-hero-gradient flex-col">
         <div className="text-center flex flex-col items-center justify-start pt-48 md:w-[640px] w-[80%]">
           <div className="">
             <h1 className="md:text-12xl text-hero font-quicksand font-semibold sm:text-8xl text-7xl leading-4 ">
@@ -19,7 +27,7 @@ const Home = () => {
               Empowering women to take control of their menstrual health
             </p>
           </div>
-          <button className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8">
+          <button className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8" onClick={scrollToGetApp}>
             Download Now
           </button>
 
@@ -34,11 +42,11 @@ const Home = () => {
             feeling supported every step of the way.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* About Section */}
 
-      <div className="bg-light_periwinkle relative">
+      <section className="bg-light_periwinkle relative">
         <div
           style={{
             position: "absolute",
@@ -62,7 +70,7 @@ const Home = () => {
           >
             <path
               d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
-              style={{ fill: "#FFFFFF" }}
+              style={{ fill: "#FFFAFF" }}
             ></path>
           </svg>
         </div>
@@ -113,10 +121,10 @@ const Home = () => {
           Ovelia aims to ameliorate the burden of PCOS by bridging the diagnosis
           gap
         </p>
-      </div>
+      </section>
 
       {/* How It Works Section */}
-      <div className="bg-hero flex flex-col items-center justify-center py-20 pb-20">
+      <section className="bg-hero flex flex-col items-center justify-center py-20 pb-20">
         <h1 className="font-dmSans font-bold text-3xl text-button_white ">
           HOW IT WORKS
         </h1>
@@ -155,10 +163,10 @@ const Home = () => {
             monitor user's menstrual cucle and sumptoms
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Know more section*/}
-      <div className="bg-radial-gradient">
+      <section className="bg-radial-gradient">
         <div className="flex flex-col items-center justify-start pt-20 pb-36">
           <div className="flex flex-col items-center md:w-[450px] w-[80%]">
             <h1 className="font-poppins font-semibold text-3xl text-hero text-center">
@@ -183,10 +191,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Achievements */}
-      <div className="bg-hero">
+      <section className="bg-hero">
         <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
           OUR ACHIEVEMENTS
         </h1>
@@ -195,15 +203,15 @@ const Home = () => {
           <img src={achievement1} alt="" />
           <img src={achievement2} alt="" />
         </div>
-      </div>
+      </section>
 
       {/* Get the App*/}
-      <div className="bg-custom-radial pb-20 ">
+      <section className="bg-custom-radial pb-20 " ref={getAppSectionRef}>
         <h1 className="font-poppins font-semibold text-4xl text-center pt-20">
           Get the app
         </h1>
 
-        <div className="flex flex-row items-center justify-center space-x-28 mt-20">
+        <div className="flex sm:flex-row flex-col items-center justify-center md:space-x-28 mt-20 sm:px-10 gap-10 p-5">
           <a href="">
             <img src={appstore_svg} alt="" />
           </a>
@@ -211,7 +219,10 @@ const Home = () => {
             <img src={playstore_svg} alt="" />
           </a>
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <Footer/>
     </>
   );
 };

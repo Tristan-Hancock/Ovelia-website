@@ -1,5 +1,6 @@
 import React from "react";
-import image from "../assets/image.png";
+import image from "../assets/images/image.png";
+import Footer from "../components/Footer";
 
 const About = () => {
   const teamMembers = [
@@ -81,7 +82,7 @@ const About = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-hero-gradient h-full block">
+      <section className="bg-hero-gradient h-full block">
         <div className="flex flex-col items-center justify-start">
           <h1 className="font-dmSans font-bold text-center text-4xl pt-20">
             Our Story
@@ -103,10 +104,10 @@ const About = () => {
             quis arcu feugiat, tincidunt justo quis, hendrerit justo
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Team Section */}
-      <div className="bg-[#BBBFFE]">
+      <section className="bg-[#BBBFFE]">
         <div>
           <h1 className="font-poppins text-3xl font-bold text-center pt-5">
             Our Team
@@ -138,10 +139,10 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Advisors Section */}
-      <div className="bg-hero">
+      <section className="bg-hero">
         <div className="text-center text-light_periwinkle font-bold sm:text-3xl pt-20 text-2xl ">
           Our Advisors / Mentor
         </div>
@@ -167,10 +168,10 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Articles Section */}
-      <div className="bg-radial-gradient grid place-items-center">
+      <section className="bg-radial-gradient grid place-items-center pb-10">
           <h1 className="text-center font-dmSans font-bold text-3xl pt-10">Articles featuring Ovelia</h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-10 px-4 md:px-20">
@@ -192,7 +193,9 @@ const About = () => {
               <a href="" className="text-[#FF599A] font-poppins font-medium text-xl mt-5">SOURCE NAME</a>
             </div>
           </div>
-      </div>
+      </section>
+
+      <Footer/>
     </>
   );
 };

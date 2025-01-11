@@ -9,7 +9,7 @@ const Newsletter = () => {
           <div className="text-button_white font-poppins text-4xl font-semibold">
             Join Our Newsletter
           </div>
-          <p className="text-button_white font-poppins text-xl font-normal mt-10">
+          <p className="text-button_white font-poppins text-xl font-normal mt-10 p-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
             nisl, elementum elit arcu amet nec non eget felis. Eu ut cursus
             luctus nunc.
