@@ -46,7 +46,7 @@ const Home = () => {
 
       {/* About Section */}
 
-      <section className="bg-light_periwinkle relative">
+      <section className="bg-[#DCDFFE] relative">
         <div
           style={{
             position: "absolute",
