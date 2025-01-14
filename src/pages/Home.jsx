@@ -1,10 +1,13 @@
-import React , {useRef} from "react";
+import React , {useRef , useState}  from "react";
+import axios from "axios";
+
 import achievement1 from "../assets/images/achievement_1.png";
 import achievement2 from "../assets/images/achievement_2.png";
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
 import placeholder from "../assets/svg/placeholder_img.svg";
 import Footer from "../components/Footer";
+
 
 const Home = () => {
 
@@ -13,6 +16,31 @@ const Home = () => {
   const scrollToGetApp = () => {
     getAppSectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:5000/submit", {
+        email,
+      });
+
+      setMessage(response.data); 
+      alert("Thank you for registering!");
+      setEmail(""); 
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      setMessage("Failed to sign up. Please try again.");
+    }
+  }
   
   return (
     <>
@@ -176,11 +204,14 @@ const Home = () => {
               sign up for our exclusive mailing list.
             </p>
 
-            <div className="md:w-[70%] w-full flex flex-col items-center justify-center">
+            <form className="md:w-[70%] w-full flex flex-col items-center justify-center"
+            onSubmit={handleSubmit} 
+            >
               <input
                 type="email"
                 className="outline-none border border-navbar_text bg-transparent rounded p-2 mt-5 w-full placeholder:text-navbar_text placeholder:font-rubiks placeholder:font-normal "
                 placeholder="Your Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <button className="mt-5  rounded w-full bg-hero py-2">
@@ -188,7 +219,7 @@ const Home = () => {
                   Sign Up
                 </span>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>

@@ -107,7 +107,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="bg-[#BBBFFE]">
+      <section className="bg-[#DCDFFE]">
         <div>
           <h1 className="font-poppins text-3xl font-bold text-center pt-5">
             Our Team
