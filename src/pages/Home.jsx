@@ -1,4 +1,4 @@
-import React , {useRef , useState}  from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 
 import achievement1 from "../assets/images/achievement_1.png";
@@ -8,9 +8,7 @@ import playstore_svg from "../assets/svg/playstore.svg";
 import placeholder from "../assets/svg/placeholder_img.svg";
 import Footer from "../components/Footer";
 
-
 const Home = () => {
-
   const getAppSectionRef = useRef(null);
 
   const scrollToGetApp = () => {
@@ -33,15 +31,15 @@ const Home = () => {
         email,
       });
 
-      setMessage(response.data); 
+      setMessage(response.data);
       alert("Thank you for registering!");
-      setEmail(""); 
+      setEmail("");
     } catch (error) {
       console.error("Error submitting email:", error);
       setMessage("Failed to sign up. Please try again.");
     }
-  }
-  
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -55,19 +53,20 @@ const Home = () => {
               Empowering women to take control of their menstrual health
             </p>
           </div>
-          <button className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8" onClick={scrollToGetApp}>
+          <button
+            className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8"
+            onClick={scrollToGetApp}
+          >
             Download Now
           </button>
 
           <p className="font-poppins font-normal sm:text-2xl text-lg  text-navbar_text pt-32 pb-14">
-            Through our own experiences, we realized how difficult it can be to
-            understand and manage Polycystic Ovarian Syndrome (PCOS). One day,
-            we were sharing our frustrations about the lack of accessible,
-            reliable resources for early detection and support—and it hit us.
-            Why not create something that truly empowers women to take charge of
-            their reproductive health? That's how Ovelia came to life—a space
-            where women can assess, track, and manage their health, all while
-            feeling supported every step of the way.
+            Polycystic Ovarian Syndrome (PCOS) affects up to 20% of women of
+            reproductive age (18-45), yet 70% of cases remain undiagnosed due to
+            limited awareness and masked symptoms from birth control use. The
+            healthcare system lacks an accessible early detection method,
+            leaving millions at risk. Ovelia bridges this gap, empowering women
+            to take charge of their health and seek timely care.
           </p>
         </div>
       </section>
@@ -162,8 +161,9 @@ const Home = () => {
             PCOS Screening Test
           </h1>
           <p className="font-poppins font-normal text-button_white text-xl mt-3 ">
-            Clinically vetted and developed in collaboration with gynecologists
-            and researchers from Johns Hopkins
+            A clinically validated tool developed in collaboration with
+            gynecologists and Johns Hopkins researchers to provide a
+            personalized risk assessment for PCOS.
           </p>
         </div>
 
@@ -174,8 +174,8 @@ const Home = () => {
             Locates Medical Professionals
           </h1>
           <p className="font-poppins font-normal text-button_white text-xl mt-3 ">
-            Gives user access to a list of Ob/Gyns within their radius and can
-            book an appointment
+            Simplifies the journey by helping users quickly locate nearby
+            doctors, saving time and effort.
           </p>
         </div>
 
@@ -186,9 +186,9 @@ const Home = () => {
             Tracks Progress
           </h1>
           <p className="font-poppins font-normal text-button_white text-xl mt-3 ">
-            Gives user prescription reader Ensures adherence to medication which
-            will lead to better treatment outcomes PerioMood: period tracker to
-            monitor user's menstrual cucle and sumptoms
+            Empowers users to monitor their menstrual cycles, manage
+            prescriptions, and stay on top of their treatment for improved
+            health outcomes.
           </p>
         </div>
       </section>
@@ -204,8 +204,9 @@ const Home = () => {
               sign up for our exclusive mailing list.
             </p>
 
-            <form className="md:w-[70%] w-full flex flex-col items-center justify-center"
-            onSubmit={handleSubmit} 
+            <form
+              className="md:w-[70%] w-full flex flex-col items-center justify-center"
+              onSubmit={handleSubmit}
             >
               <input
                 type="email"
@@ -253,7 +254,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </>
   );
 };

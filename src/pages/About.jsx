@@ -1,47 +1,62 @@
 import React from "react";
 import image from "../assets/images/image.png";
 import Footer from "../components/Footer";
+import articleImage from "../assets/images/Full-Fall-2024-Cohort-new.png"
 
 const About = () => {
   const teamMembers = [
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Himanshi Sharma",
+      role: "Founder & CEO",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Tristan Hancock",
+      role: "CTO",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Rajshri Sukhani",
+      role: "Chief Research Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Emily Chen",
+      role: "Chief Fundraising Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Amika Patel",
+      role: "Chief Business Development Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Aaryan Mahipal",
+      role: "Chief Product Officer",
+      description:
+        "There are many reasons to get down and start to get depressed about your situation.",
+      image: image,
+    },
+    {
+      name: "Nuha Contractor",
+      role: "Chief Design Officer",
+      description:
+        "There are many reasons to get down and start to get depressed about your situation.",
+      image: image,
+    },
+    {
+      name: "Heet Jaiswal",
+      role: "Chief Insights Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
@@ -50,22 +65,22 @@ const About = () => {
 
   const advisors = [
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Dr. James Segars",
+      role: "Director, Division of Women's Health Research, Johns Hopkins Medicine",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Dr. Bhuchitra Singh",
+      role: "Director of Clinical Research, Seegars Jones Laboratory, Johns Hopkins Medicine",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
     },
     {
-      name: "Andrei Masharin",
-      role: "CEO",
+      name: "Ashley Duque Kienzle",
+      role: "CEO, Almma Health",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
       image: image,
@@ -95,13 +110,8 @@ const About = () => {
             className="w-full h-[300px] sm:h-[450px] md:h-[600px] lg:h-[450px] xl:h-[600px] p-6 rounded"
           ></iframe>
 
-          <p className="md:w-7/12 font-poppins font-normal text-xl p-6 mt-16">
-            ABOUT PCOS / OVELIA PARAGRAPH Donec ultrices auctor tempor. Nunc
-            vitae volutpat ipsum. Sed faucibus risus in nibh molestie, non
-            venenatis ex volutpat. Aenean in bibendum erat. Etiam ornare massa
-            arcu, vitae pellentesque sapien tempor non. Ut ac arcu metus. Aenean
-            nec neque felis. Fusce fermentum accumsan orci non posuere. Cras
-            quis arcu feugiat, tincidunt justo quis, hendrerit justo
+          <p className="md:w-7/12 font-poppins font-normal text-xl p-6 mt-16 text-center">
+          Ovelia is a digital tool that helps women assess their risk of Polycystic Ovarian Syndrome (PCOS) through a clinically vetted questionnaire developed with experts from Johns Hopkins. The app offers tools for menstrual tracking, symptom management, and access to a supportive community, empowering women to take charge of their reproductive health. By raising awareness and providing early detection resources, Ovelia aims to address the widespread underdiagnosis of PCOS.
           </p>
         </div>
       </section>
@@ -157,10 +167,10 @@ const About = () => {
                   <h1 className="font-rubiks font-medium text-lg text-button_white">
                     {advisors.name}
                   </h1>
-                  <p className="font-rubiks text-light_periwinkle font-medium text-xs">
+                  <p className="font-rubiks text-light_periwinkle font-medium text-sm mt-2">
                     {advisors.role}
                   </p>
-                  <p className="font-rubiks text-light_periwinkle font-normal text-sm">
+                  <p className="font-rubiks text-light_periwinkle font-normal text-sm mt-1">
                     {advisors.description}
                   </p>
                 </div>
@@ -176,15 +186,15 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-10 px-4 md:px-20">
             <div className="flex flex-col">
-              <img src={image} alt="" />
+              <img src={articleImage} alt="" />
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5">Although this is well intentioned and the goal certainly is to reduce the quantity of these bothersome thoughts, the technique is inherently flawed. </p>
-              <a href="" className="text-[#FF599A] font-poppins font-medium text-xl mt-5">SOURCE NAME</a>
+              <a href="https://ventures.jhu.edu/news/the-pava-center-welcomes-fall-2024-fuel-accelerator-cohort/" className="text-[#FF599A] font-poppins font-medium text-xl mt-5 hover:underline cursor-pointer">JOHNS HOPKINS TECHNOLOGY VENTURES</a>
             </div>
 
             <div className="flex flex-col">
-              <img src={image} alt="" />
+              <img src={articleImage} alt="" />
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5">Although this is well intentioned and the goal certainly is to reduce the quantity of these bothersome thoughts, the technique is inherently flawed. </p>
-              <a href="" className="text-[#FF599A] font-poppins font-medium text-xl mt-5">SOURCE NAME</a>
+              <a href="https://technical.ly/professional-development/pava-center-johns-hopkins-accelerator-baltimore-power-moves/" className="text-[#FF599A] font-poppins font-medium text-xl mt-5 hover:underline cursor-pointer">TECHNICAL.LY</a>
             </div>
 
             <div className="flex flex-col">

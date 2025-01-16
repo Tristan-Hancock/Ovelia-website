@@ -2,7 +2,6 @@ import express from "express";
 import { google } from "googleapis";
 import cors from "cors";
 
-
 const app = express();
 const PORT = 5000;
 app.use(cors());
@@ -22,7 +21,7 @@ async function writeEmailToSheet(email) {
   const resource = { values: [[email]] };
 
   try {
-    const res =  sheets.spreadsheets.values.append({
+    const res = sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
       valueInputOption,
@@ -35,6 +34,27 @@ async function writeEmailToSheet(email) {
   }
 }
 
+async function writeNameToSheet(name, email, reason) {
+  const sheets = google.sheets({ version: "v4", auth });
+  const spreadsheetId = "1i1grm8SSL0ZE0p3o-Jabe_1ENf2IRt13t42TAnF0Cfo";
+  const range = "Sheet1!C2:E";
+  const valueInputOption = "USER_ENTERED";
+
+  const resource = { values: [[name, email, reason]] };
+
+  try {
+    const res = sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range,
+      valueInputOption,
+      resource,
+    });
+    return res;
+  } catch (err) {
+    console.error(err);
+    throw new Error("Failed to write name , email to google sheet");
+  }
+}
 
 app.post("/submit", async (req, res) => {
   const { email } = req.body;
@@ -51,6 +71,18 @@ app.post("/submit", async (req, res) => {
     res.status(500).send("Failed to add email to Google Sheet.");
   }
 });
+
+app.post("/submit_name", async(req, res) => {
+  const {email , name , reason} = req.body;
+
+  try{
+    await writeNameToSheet(email , name , reason)
+    res.status(200).send("Name and Email added to Google Sheet")
+  } catch (err){
+    console.error("Error handling email submission:", err);
+    res.status(500).send("Failed to add name and email to Google Sheet.");
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

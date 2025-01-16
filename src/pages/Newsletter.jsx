@@ -35,11 +35,10 @@ const Newsletter = () => {
             <div className="text-button_white font-poppins text-4xl font-semibold">
               Join Our Newsletter
             </div>
-            <p className="text-button_white font-poppins text-xl font-normal mt-10 p-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis
-              nisl, elementum elit arcu amet nec non eget felis. Eu ut cursus
-              luctus nunc.
+            <p className="text-button_white font-poppins text-xl font-normal mt-5 p-5">
+            You deserve to feel empowered, informed, and supported every step of the way.You deserve to feel empowered, informed, and supported every step of the way.
             </p>
+
 
             <form className="flex flex-col items-center w-1/2  mt-4"
             onSubmit={handleSubmit}>
