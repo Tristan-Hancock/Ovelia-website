@@ -11,7 +11,7 @@ export default function App() {
     <>
       <Navbar/>
       <Routes>
-        <Route path="/Ovelia-website" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>

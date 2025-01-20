@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigationItems = [
-    { path: "/Ovelia-website", label: "Home" },
+    { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { path: "/newsletter", label: "Newsletter" },
     { path: "/contact", label: "Contact" }

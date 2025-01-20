@@ -57,7 +57,7 @@ const Home = () => {
             className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8"
             onClick={scrollToGetApp}
           >
-            Download Now
+            Sign Up For Beta
           </button>
 
           <p className="font-poppins font-normal sm:text-2xl text-lg  text-navbar_text pt-32 pb-14">
@@ -106,40 +106,38 @@ const Home = () => {
           PCOS affects 1-in-10 women
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 pt-10 pb-20 px-5">
-          <div className="flex flex-col items-center w-4/6 mx-auto text-center justify-center">
-            <img src={placeholder} alt="" />
-            <div className="font-lato font-extrabold text-lg">Donec vitae.</div>
-            <p className="font-poppins font-normal text-xs ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
-              vestibulum ect
+        <div className="grid grid-cols-1 md:grid-cols-4 pt-10 pb-20 px-5 space-y-6 sm:space-y-0">
+          <div className="flex flex-col items-center w-4/6 mx-auto text-center">
+            {/* <img src={placeholder} alt="" /> */}
+            <h1 className="font-lato font-extrabold text-5xl">70%</h1>
+            <p className="font-poppins font-normal text-base ">
+              70% of women with PCOS go undiagnosed.
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
-            <img src={placeholder} alt="" />
-            <div className="font-lato font-extrabold text-lg">Donec vitae.</div>
-            <p className="font-poppins font-normal text-xs ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
-              vestibulum ect
+            {/* <img src={placeholder} alt="" /> */}
+            <h1 className="font-lato font-extrabold text-5xl">3X</h1>
+            <p className="font-poppins font-normal text-base ">
+              The risk of endometrial cancer is tripled for women with PCOS.
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
-            <img src={placeholder} alt="" />
-            <div className="font-lato font-extrabold text-lg">Donec vitae.</div>
-            <p className="font-poppins font-normal text-xs ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
-              vestibulum ect
+            {/* <img src={placeholder} alt="" /> */}
+            <h1 className="font-lato font-extrabold text-5xl">50%</h1>
+            <p className="font-poppins font-normal text-base ">
+              There is a 50% likelihood of developing T2DM (Type 2 diabetes
+              mellitus) or pre-diabetes before the age of 40
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
-            <img src={placeholder} alt="" />
-            <div className="font-lato font-extrabold text-lg">Donec vitae.</div>
-            <p className="font-poppins font-normal text-xs ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc
-              vestibulum ect
+            {/* <img src={placeholder} alt="" /> */}
+            <h1 className="font-lato font-extrabold text-5xl">50%</h1>
+            <p className="font-poppins font-normal text-base ">
+              There is a 50% higher risk of developing heart diseaseshere is a
+              50% higher risk of developing heart diseases
             </p>
           </div>
         </div>
@@ -193,8 +191,36 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Get the App*/}
+      <section className="bg-custom-radial pb-20 " ref={getAppSectionRef}>
+        <h1 className="font-poppins font-semibold text-4xl text-center pt-20">
+          Get the app
+        </h1>
+
+        <div className="flex sm:flex-row flex-col items-center justify-center md:space-x-28 mt-20 sm:px-10 gap-10 p-5">
+          <a href="">
+            <img src={appstore_svg} alt="" />
+          </a>
+          <a href="">
+            <img src={playstore_svg} alt="" />
+          </a>
+        </div>
+      </section>
+
+      {/* Achievements */}
+      <section className="bg-hero">
+        <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
+          OUR ACHIEVEMENTS
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
+          <img src={achievement1} alt="" />
+          <img src={achievement2} alt="" />
+        </div>
+      </section>
+
       {/* Know more section*/}
-      <section className="bg-radial-gradient">
+      <section className="bg-radial-gradient" >
         <div className="flex flex-col items-center justify-start pt-20 pb-36">
           <div className="flex flex-col items-center md:w-[450px] w-[80%]">
             <h1 className="font-poppins font-semibold text-3xl text-hero text-center">
@@ -222,34 +248,6 @@ const Home = () => {
               </button>
             </form>
           </div>
-        </div>
-      </section>
-
-      {/* Achievements */}
-      <section className="bg-hero">
-        <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
-          OUR ACHIEVEMENTS
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
-          <img src={achievement1} alt="" />
-          <img src={achievement2} alt="" />
-        </div>
-      </section>
-
-      {/* Get the App*/}
-      <section className="bg-custom-radial pb-20 " ref={getAppSectionRef}>
-        <h1 className="font-poppins font-semibold text-4xl text-center pt-20">
-          Get the app
-        </h1>
-
-        <div className="flex sm:flex-row flex-col items-center justify-center md:space-x-28 mt-20 sm:px-10 gap-10 p-5">
-          <a href="">
-            <img src={appstore_svg} alt="" />
-          </a>
-          <a href="">
-            <img src={playstore_svg} alt="" />
-          </a>
         </div>
       </section>
 
