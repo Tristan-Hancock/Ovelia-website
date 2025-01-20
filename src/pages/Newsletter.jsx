@@ -14,9 +14,10 @@ const Newsletter = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/submit", {
+      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/newsletter", {
         email,
-      });
+       }
+    );
 
       setMessage(response.data);
       alert("Thank you for registering!");

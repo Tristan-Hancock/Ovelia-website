@@ -16,7 +16,7 @@ const Contact = () => {
     }
 
     try{
-      const response = await axios.post("http://localhost:5000/submit_name", {
+      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/contact", {
         email,
         name,
         reason
@@ -60,9 +60,9 @@ const Contact = () => {
               <option value="" disabled selected>
                 Reason
               </option>
-              <option value="Feedback">Feedback</option>
-              <option value="Support">Support</option>
-              <option value="Other">Other</option>
+              <option value="Inquiries">Inquiries</option>
+              <option value="Partnership Opportunities">Partnership Opportunities</option>
+              <option value="Career Possibilities">Career Possibilities</option>
             </select>
             <button className=" bg-[#bbbffe] px-4 py-1 w-full rounded">
               <span className="text-navbar_text font-poppins font-semibold ">
