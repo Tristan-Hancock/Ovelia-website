@@ -130,23 +130,22 @@ const About = () => {
             Our Team
           </h1>
           <p className="font-rubiks text-center font-normal text-xl mt-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulputate
-            fames ut
+            
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 mt-10 pt-10 lg:px-28 px-6 gap-10 grid-cols-1 pb-20">
+        <div className="grid md:grid-cols-2 mt-10 pt-10 lg:px-28 px-6 gap-10 grid-cols-1 pb-20 ">
           {teamMembers.map((member, index) => (
             <div
               key={index}
               className="flex md:flex-row items-center justify-center flex-col"
             >
               <img src={member.image} alt={`${member.name}-img`} />
-              <div className="flex flex-col justify-start ml-5 mt-4 sm:mt-0">
+              <div className="flex flex-col justify-start ml-5 mt-4 sm:mt-0 max-w-sm text-center md:text-left">
                 <h1 className="font-poppins font-medium text-2xl">
                   {member.name}
                 </h1>
-                <p className="font-poppins font-medium text-xl text-navbar_text">
+                <p className="font-poppins font-medium text-xl text-navbar_text break-words">
                   {member.role}
                 </p>
                 <p className="font-rubiks font-normal text-lg text-navbar_text">
@@ -164,25 +163,25 @@ const About = () => {
           Our Advisors / Mentor
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 pt-5 gap-10 sm:px-16 px-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 pt-5 gap-10 sm:px-16 px-8 pb-20 items-center justify-center">
           {advisors.map((advisors, index) => (
-            <div key={index} className="flex flex-col">
-              <div className="flex flex-col ">
+            <div key={index} className="flex flex-col items-center">
+              <div className="flex flex-col items-center">
                 <img
                   src={advisors.image}
                   alt={`${advisors.name}-img`}
                   className="w-52 h-40"
                 />
                 <div className="flex sm:justify-start flex-col ">
-                  <h1 className="font-rubiks font-medium text-lg text-button_white">
+                  <h1 className="font-rubiks font-medium text-lg text-button_white text-center">
                     {advisors.name}
                   </h1>
-                  <p className="font-rubiks text-light_periwinkle font-medium text-sm mt-2">
+                  <p className="font-rubiks text-light_periwinkle font-medium text-sm mt-2 text-center">
                     {advisors.role}
                   </p>
-                  <p className="font-rubiks text-light_periwinkle font-normal text-sm mt-1">
+                  {/* <p className="font-rubiks text-light_periwinkle font-normal text-sm mt-1">
                     {advisors.description}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

@@ -56,33 +56,39 @@ async function writeNameToSheet(name, email, reason) {
   }
 }
 
-app.post("/submit", async (req, res) => {
-  const { email } = req.body;
+app.post(
+  "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/newsletter",
+  async (req, res) => {
+    const { email } = req.body;
 
-  if (!email) {
-    return res.status(400).send("Email is required");
+    if (!email) {
+      return res.status(400).send("Email is required");
+    }
+
+    try {
+      await writeEmailToSheet(email);
+      res.status(200).send("Email added to Google Sheet");
+    } catch (err) {
+      console.error("Error handling email submission:", err);
+      res.status(500).send("Failed to add email to Google Sheet.");
+    }
   }
+);
 
-  try {
-    await writeEmailToSheet(email);
-    res.status(200).send("Email added to Google Sheet");
-  } catch (err) {
-    console.error("Error handling email submission:", err);
-    res.status(500).send("Failed to add email to Google Sheet.");
+app.post(
+  "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/contact",
+  async (req, res) => {
+    const { email, name, reason } = req.body;
+
+    try {
+      await writeNameToSheet(email, name, reason);
+      res.status(200).send("Name and Email added to Google Sheet");
+    } catch (err) {
+      console.error("Error handling email submission:", err);
+      res.status(500).send("Failed to add name and email to Google Sheet.");
+    }
   }
-});
-
-app.post("/submit_name", async(req, res) => {
-  const {email , name , reason} = req.body;
-
-  try{
-    await writeNameToSheet(email , name , reason)
-    res.status(200).send("Name and Email added to Google Sheet")
-  } catch (err){
-    console.error("Error handling email submission:", err);
-    res.status(500).send("Failed to add name and email to Google Sheet.");
-  }
-})
+);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

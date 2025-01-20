@@ -5,7 +5,6 @@ import achievement1 from "../assets/images/achievement_1.png";
 import achievement2 from "../assets/images/achievement_2.png";
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
-import placeholder from "../assets/svg/placeholder_img.svg";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -111,7 +110,7 @@ const Home = () => {
             {/* <img src={placeholder} alt="" /> */}
             <h1 className="font-lato font-extrabold text-5xl">70%</h1>
             <p className="font-poppins font-normal text-base ">
-              70% of women with PCOS go undiagnosed.
+              70% of women with PCOS go undiagnosed
             </p>
           </div>
 
@@ -119,7 +118,7 @@ const Home = () => {
             {/* <img src={placeholder} alt="" /> */}
             <h1 className="font-lato font-extrabold text-5xl">3X</h1>
             <p className="font-poppins font-normal text-base ">
-              The risk of endometrial cancer is tripled for women with PCOS.
+              The risk of endometrial cancer is tripled for women with PCOS
             </p>
           </div>
 
@@ -136,8 +135,7 @@ const Home = () => {
             {/* <img src={placeholder} alt="" /> */}
             <h1 className="font-lato font-extrabold text-5xl">50%</h1>
             <p className="font-poppins font-normal text-base ">
-              There is a 50% higher risk of developing heart diseaseshere is a
-              50% higher risk of developing heart diseases
+              There is a 50% higher risk of developing heart diseases
             </p>
           </div>
         </div>
