@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 
 import achievement1 from "../assets/images/achievement_1.png";
-import achievement2 from "../assets/images/achievement_2.png";
+import achievement2 from "../assets/images/mng_grant.jpg";
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
 import Footer from "../components/Footer";
@@ -56,7 +56,7 @@ const Home = () => {
             className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8"
             onClick={scrollToGetApp}
           >
-            Sign Up For Beta
+            Sign Up For Beta Testing
           </button>
 
           <p className="font-poppins font-normal sm:text-2xl text-lg  text-navbar_text pt-32 pb-14">
@@ -158,7 +158,7 @@ const Home = () => {
           </h1>
           <p className="font-poppins font-normal text-button_white text-xl mt-3 ">
             A clinically validated tool developed in collaboration with
-            gynecologists and Johns Hopkins researchers to provide a
+            gynecologists and researchers from Johns Hopkins to provide a
             personalized risk assessment for PCOS.
           </p>
         </div>
@@ -213,7 +213,10 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
           <img src={achievement1} alt="" />
-          <img src={achievement2} alt="" />
+          <div className="flex flex-col items-center justify-center">
+          <img src={achievement2} alt="" className="w-80 h-36 object-contain"/>
+          <p className="text-button_white font-normal font-poppins p-4 text-center">Winners of the Maroon & Gold Grant</p>
+          </div>
         </div>
       </section>
 

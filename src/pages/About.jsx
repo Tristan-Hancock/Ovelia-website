@@ -2,6 +2,17 @@ import React from "react";
 import image from "../assets/images/image.png";
 import Footer from "../components/Footer";
 import articleImage from "../assets/images/Full-Fall-2024-Cohort-new.png";
+import advisor_image_1 from "../assets/images/advisors/Dr_James_Segars.png"
+import advisor_image_2 from "../assets/images/advisors/Dr_Bhuchitra_Singh.png"
+import advisor_image_3 from "../assets/images/advisors/Ashley_Duque_Kienzle.png"
+import team_member_1 from "../assets/images/team_members/Himanshi_Sharma.jpg"
+import team_member_2 from "../assets/images/team_members/Tristan_Hancock.jpg"
+import team_member_3 from "../assets/images/team_members/Rajshri_Sukhani.jpg"
+import team_member_4 from "../assets/images/team_members/Emily_Chen.jpg"
+import team_member_5 from "../assets/images/team_members/Amika_Patel.jpg"
+import team_member_6 from "../assets/images/team_members/Aaryan_Mahipal.png"
+// import team_member_7 from "../assets/images/team_members/Nuha_Contractor.jpg"
+import team_member_8 from "../assets/images/team_members/Heet_Jaiswal.jpg"
 
 const About = () => {
   const teamMembers = [
@@ -10,42 +21,42 @@ const About = () => {
       role: "Founder & CEO",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_1,
     },
     {
       name: "Tristan Hancock",
       role: "CTO",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_2,
     },
     {
       name: "Rajshri Sukhani",
       role: "Chief Research Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_3,
     },
     {
       name: "Emily Chen",
       role: "Chief Fundraising Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_4,
     },
     {
       name: "Amika Patel",
       role: "Chief Business Development Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_5,
     },
     {
       name: "Aaryan Mahipal",
       role: "Chief Product Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_6,
     },
     {
       name: "Nuha Contractor",
@@ -59,7 +70,7 @@ const About = () => {
       role: "Chief Insights Officer",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: team_member_8,
     },
   ];
 
@@ -69,29 +80,23 @@ const About = () => {
       role: "Director, Division of Women's Health Research, Johns Hopkins Medicine",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: advisor_image_1,
     },
     {
       name: "Dr. Bhuchitra Singh",
       role: "Director of Clinical Research, Seegars Jones Laboratory, Johns Hopkins Medicine",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: advisor_image_2,
     },
     {
       name: "Ashley Duque Kienzle",
       role: "CEO, Almma Health",
       description:
         "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
+      image: advisor_image_3,
     },
-    {
-      name: "Andrei Masharin",
-      role: "CEO",
-      description:
-        "There are many reasons to get down and start to get depressed about your situation.",
-      image: image,
-    },
+    
   ];
 
   return (
@@ -138,17 +143,17 @@ const About = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="flex md:flex-row items-center justify-center flex-col"
+              className="flex lg:flex-row items-center justify-center flex-col"
             >
-              <img src={member.image} alt={`${member.name}-img`} />
-              <div className="flex flex-col justify-start ml-5 mt-4 sm:mt-0 max-w-sm text-center md:text-left">
-                <h1 className="font-poppins font-medium text-2xl">
+              <img src={member.image} alt={`${member.name}-img`} className="h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-56 lg:w-56 object-contain rounded-full" />
+              <div className="flex flex-col justify-start lg:ml-5 mt-4 sm:mt-0 max-w-sm text-center md:text-left ">
+                <h1 className="font-poppins font-medium text-2xl text-center mt-5">
                   {member.name}
                 </h1>
-                <p className="font-poppins font-medium text-xl text-navbar_text break-words">
+                <p className="font-poppins font-medium text-xl text-navbar_text break-words text-center">
                   {member.role}
                 </p>
-                <p className="font-rubiks font-normal text-lg text-navbar_text">
+                <p className="font-rubiks font-normal text-lg text-navbar_text text-center">
                   {member.description}
                 </p>
               </div>
@@ -163,17 +168,17 @@ const About = () => {
           Our Advisors / Mentor
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 pt-5 gap-10 sm:px-16 px-8 pb-20 items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 pt-5 gap-10 sm:px-16 px-8 pb-20 items-center justify-center">
           {advisors.map((advisors, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="flex flex-col items-center">
                 <img
                   src={advisors.image}
                   alt={`${advisors.name}-img`}
-                  className="w-52 h-40"
+                  className="h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-56 lg:w-56 rounded-full object-contain"
                 />
                 <div className="flex sm:justify-start flex-col ">
-                  <h1 className="font-rubiks font-medium text-lg text-button_white text-center">
+                  <h1 className="font-rubiks font-medium text-lg text-button_white text-center mt-5">
                     {advisors.name}
                   </h1>
                   <p className="font-rubiks text-light_periwinkle font-medium text-sm mt-2 text-center">
@@ -195,7 +200,7 @@ const About = () => {
           Articles featuring Ovelia
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-10 px-4 md:px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 pt-10 px-4 md:px-20">
           <div className="flex flex-col">
             <a href="https://ventures.jhu.edu/news/the-pava-center-welcomes-fall-2024-fuel-accelerator-cohort/">
               <img src={articleImage} alt="" />
@@ -224,7 +229,7 @@ const About = () => {
             </a>
           </div>
 
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <a href="">
               <img src={image} alt="" className="w-full" />
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5">
@@ -236,7 +241,7 @@ const About = () => {
                 SOURCE NAME
               </div>
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 

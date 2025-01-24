@@ -16,14 +16,27 @@ const Contact = () => {
     }
 
     try{
-      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/contact", {
+      console.log('Sending data:', { name, email, reason });
+      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/contact", {
         email,
         name,
         reason
+      },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       }
+    }
+      
     )}catch (err){
-      console.error("Error submitting email:", err);
-      setMessage("Failed to submit form. Please try again.");
+      console.error("Full error:", {
+    data: err.response?.data,
+    status: err.response?.status,
+    headers: err.response?.headers,
+    config: err.config // This will show what was actually sent
+  });
+  setMessage("Failed to submit form. Please try again.");
     }
   } 
 
@@ -45,17 +58,17 @@ const Contact = () => {
           <form className="flex flex-col items-center sm:w-1/2 mt-4 space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
-              className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-4 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+              className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-2 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
               placeholder="Your Name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type="email"
-              className="bg-hero border-button_white border rounded mt-2 py-1 outline-none px-4 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
-              placeholder="Your Email"
+              className="bg-hero border-button_white border rounded mt-2 py-1 outline-none px-2 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+              placeholder="Rour Email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <select className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-4 text-button_white w-full placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+            <select className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-1 text-button_white w-full placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
             onChange={(e) => setReason(e.target.value)} value={reason}>
               <option value="" disabled selected>
                 Reason

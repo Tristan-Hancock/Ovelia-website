@@ -76,7 +76,7 @@ app.post(
 );
 
 app.post(
-  "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/contact",
+  "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/contact",
   async (req, res) => {
     const { email, name, reason } = req.body;
 
