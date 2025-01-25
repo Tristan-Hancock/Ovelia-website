@@ -1,7 +1,7 @@
 import React from "react";
-import image from "../assets/images/image.png";
 import Footer from "../components/Footer";
 import articleImage from "../assets/images/Full-Fall-2024-Cohort-new.png";
+import articleImage2 from "../assets/images/article_image.jpg";
 import advisor_image_1 from "../assets/images/advisors/Dr_James_Segars.png"
 import advisor_image_2 from "../assets/images/advisors/Dr_Bhuchitra_Singh.png"
 import advisor_image_3 from "../assets/images/advisors/Ashley_Duque_Kienzle.png"
@@ -201,15 +201,13 @@ const About = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 pt-10 px-4 md:px-20">
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <a href="https://ventures.jhu.edu/news/the-pava-center-welcomes-fall-2024-fuel-accelerator-cohort/">
               <img src={articleImage} alt="" />
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5 hover:underline cursor-pointer">
-                Although this is well intentioned and the goal certainly is to
-                reduce the quantity of these bothersome thoughts, the technique
-                is inherently flawed.{" "}
+              The Pava Center Welcomes Fall 2024 Fuel Accelerator Cohort
               </p>
-              <div className="text-[#FF599A] font-poppins font-medium text-xl mt-5 hover:underline cursor-pointer">
+              <div className="text-[#FF599A] font-poppins font-medium text-xl mt-5 hover:underline cursor-pointer lg:pt-8">
                 JOHNS HOPKINS TECHNOLOGY VENTURES
               </div>
             </a>
@@ -217,11 +215,9 @@ const About = () => {
 
           <div className="flex flex-col">
             <a href="https://technical.ly/professional-development/pava-center-johns-hopkins-accelerator-baltimore-power-moves/">
-              <img src={articleImage} alt="" />
+              <img src={articleImage2} alt="" className=" xl:h-[430px] "/>
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5 hover:underline cursor-pointer">
-                Although this is well intentioned and the goal certainly is to
-                reduce the quantity of these bothersome thoughts, the technique
-                is inherently flawed.{" "}
+              Johns Hopkins' Pava Center picks promising startups in AI, healthcare and music 
               </p>
               <div className="text-[#FF599A] font-poppins font-medium text-xl mt-5 hover:underline cursor-pointer">
                 TECHNICAL.LY

@@ -9,7 +9,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { path: "/newsletter", label: "Newsletter" },
-    { path: "/contact", label: "Contact" }
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
@@ -17,7 +17,7 @@ const Navbar = () => {
       <img src={logo} alt="Ovelia-logo" className="h-16 w-16 ml-3"></img>
       <nav className="hidden md:flex">
         <ul className="flex flex-row items-center text-navbar_text font-bold font-dmSans space-x-10 text-xl mr-6">
-        {navigationItems.map((item) => (
+          {navigationItems.map((item) => (
             <li key={item.path}>
               <Link to={item.path}>{item.label}</Link>
             </li>
@@ -45,7 +45,7 @@ const Navbar = () => {
         } origin-top`}
       >
         <ul className="flex flex-col items-center text-navbar_text font-bold font-dmSans space-y-4 py-4">
-        {navigationItems.map((item) => (
+          {navigationItems.map((item) => (
             <li key={item.path}>
               <Link to={item.path}>{item.label}</Link>
             </li>

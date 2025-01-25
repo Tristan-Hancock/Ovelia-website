@@ -18,11 +18,11 @@ const Footer = () => {
       </div>
 
       <div className="font-dmSans font-bold text-lg pl-3">
-        <a href="">Terms &amp; Condition</a>
+        <a href="">Terms &amp; Conditions</a>
       </div>
 
       <div className="font-dmSans font-bold text-lg pl-3">
-        <a href="">Sources</a>
+        <a href="https://docs.google.com/document/d/1fF73Tf59wI91Ecfr_HTcRQK8QE8LkDyNYniX_7XYyfw/edit?usp=sharing" target="_blank">Sources</a>
       </div>
 
       <div>

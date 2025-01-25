@@ -4,6 +4,7 @@ import axios from "axios";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -12,12 +13,14 @@ const Newsletter = () => {
       alert("Please enter a valid email address.");
       return;
     }
-
+    setLoading(true);
     try {
-      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/newsletter", {
-        email,
-       }
-    );
+      const response = await axios.post(
+        "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/newsletter",
+        {
+          email,
+        }
+      );
 
       setMessage(response.data);
       alert("Thank you for registering!");
@@ -25,6 +28,11 @@ const Newsletter = () => {
     } catch (error) {
       console.error("Error submitting email:", error);
       setMessage("Failed to sign up. Please try again.");
+    } finally {
+      // Reset the button state after 30 seconds
+      setTimeout(() => {
+        setLoading(false);
+      }, 30000); // 30 seconds
     }
   };
 
@@ -41,7 +49,6 @@ const Newsletter = () => {
               of the way.You deserve to feel empowered, informed, and supported
               every step of the way.
             </p>
-           
 
             <form
               className="flex flex-col items-center w-1/2  mt-4"
@@ -53,9 +60,12 @@ const Newsletter = () => {
                 placeholder="Your Email"
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <button className=" bg-[#bbbffe] px-4 py-1 w-full rounded">
+              <button
+                className=" bg-[#bbbffe] px-4 py-1 w-full rounded"
+                disabled={loading}
+              >
                 <span className="text-navbar_text font-poppins font-semibold ">
-                  SIGN UP!
+                  {loading ? "Loading..." : "SIGN UP!"}
                 </span>
               </button>
             </form>

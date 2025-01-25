@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 
-import achievement1 from "../assets/images/achievement_1.png";
+import achievement1 from "../assets/nucleate.png";
 import achievement2 from "../assets/images/mng_grant.jpg";
-import achievement3 from '../assets/images/achievement_3.png';
-import cohort from '../assets/images/cohort.png';
+import cohort from "../assets/images/cohort.png";
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
 import Footer from "../components/Footer";
@@ -18,6 +17,7 @@ const Home = () => {
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,10 +27,14 @@ const Home = () => {
       return;
     }
 
+    setLoading(true);
     try {
-      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/newsletter", {
-        email,
-      });
+      const response = await axios.post(
+        "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/newsletter",
+        {
+          email,
+        }
+      );
 
       setMessage(response.data);
       alert("Thank you for registering!");
@@ -38,6 +42,11 @@ const Home = () => {
     } catch (error) {
       console.error("Error submitting email:", error);
       setMessage("Failed to sign up. Please try again.");
+    } finally {
+      // Reset the button state after 30 seconds
+      setTimeout(() => {
+        setLoading(false);
+      }, 30000); // 30 seconds
     }
   };
 
@@ -58,7 +67,7 @@ const Home = () => {
             className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8"
             onClick={scrollToGetApp}
           >
-            Sign Up For Beta Testing
+            Sign Up For Beta Access
           </button>
 
           <p className="font-poppins font-normal sm:text-2xl text-lg  text-navbar_text pt-32 pb-14">
@@ -209,40 +218,58 @@ const Home = () => {
 
       {/* Achievements */}
       <section className="bg-hero">
-  <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
-    OUR ACHIEVEMENTS
-  </h1>
+        <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
+          OUR ACHIEVEMENTS
+        </h1>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
-    {/* Achievement 1 */}
-    <img src={achievement1} alt="Achievement 1" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
+          {/* Achievement 1 */}
+          <div className="flex flex-col items-center justify-center">
+            <img
+              src={cohort}
+              alt="Achievement 3"
+              className="w-80 h-auto object-contain rounded-lg shadow-lg"
+            />
+            <p className="text-button_white font-semibold font-poppins text-xl text-center pt-4">
+              2024 Fall Cohort
+            </p>
+            <p className="text-button_white font-light font-poppins text-base text-center">
+              PAVA Center Fuel Accelerator
+            </p>
+          </div>
 
-    {/* Achievement 2 */}
-    <div className="flex flex-col items-center justify-center">
-      <img src={achievement2} alt="Achievement 2" className="w-80 h-36 object-contain" />
-      <p className="text-button_white font-normal font-poppins p-4 text-center">
-        Winners of the Maroon & Gold Grant
-      </p>
-    </div>
+          {/* Achievement 2 */}
+          <div className="flex flex-col items-center justify-center">
+            <img
+              src={achievement2}
+              alt="Achievement 2"
+              className="w-80 h-36 object-contain"
+            />
+            <p className="text-button_white font-normal font-poppins p-4 text-center">
+              Winners of the Maroon & Gold Grant
+            </p>
+          </div>
 
-    {/* Achievement 3 */}
-    <div className="flex flex-col items-center justify-center">
-  <img src={cohort} alt="Achievement 3" className="w-80 h-auto object-contain rounded-lg shadow-lg" />
-  <p className="text-button_white font-normal font-poppins text-xl text-center pt-4">
-    2024 Fall Cohort
-  </p>
-  <p className="text-button_white font-light font-poppins text-base text-center">
-    PAVA Center Fuel Accelerator
-  </p>
-</div>
+          {/* Achievement 3 */}
 
-
-  </div>
-</section>
-
+          <div className="flex flex-col items-center justify-center ">
+            <img
+              src={achievement1}
+              alt="Achievement 1"
+              className="w-80 h-36 rounded-lg"
+            />
+            <p className="font-poppins font-semibold text-button_white text-center text-xl mt-3">
+              Finalists
+            </p>
+            <p className="font-poppins font-normal text-button_white text-center ">
+              Boston chapter recognized among next-gen bioentrepreneurs
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Know more section*/}
-      <section className="bg-radial-gradient" >
+      <section className="bg-radial-gradient">
         <div className="flex flex-col items-center justify-start pt-20 pb-36">
           <div className="flex flex-col items-center md:w-[450px] w-[80%]">
             <h1 className="font-poppins font-semibold text-3xl text-hero text-center">
@@ -263,9 +290,12 @@ const Home = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
 
-              <button className="mt-5  rounded w-full bg-hero py-2">
+              <button
+                className="mt-5  rounded w-full bg-hero py-2"
+                disabled={loading}
+              >
                 <span className="font-dmSans font-bold text-button_white text-lg  mt-5 ">
-                  Sign Up
+                  {loading ? "Loading..." : "Sign Up"}
                 </span>
               </button>
             </form>
