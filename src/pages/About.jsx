@@ -20,56 +20,56 @@ const About = () => {
       name: "Himanshi Sharma",
       role: "Founder & CEO",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_1,
     },
     {
       name: "Tristan Hancock",
       role: "CTO",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_2,
     },
     {
       name: "Rajshri Sukhani",
       role: "Chief Research Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_3,
     },
     {
       name: "Emily Chen",
       role: "Chief Fundraising Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_4,
     },
     {
       name: "Amika Patel",
       role: "Chief Business Development Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_5,
     },
     {
       name: "Aaryan Mahipal",
       role: "Chief Product Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_6,
     },
     {
       name: "Nuha Contractor",
       role: "Chief Design Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: image,
     },
     {
       name: "Heet Jaiswal",
       role: "Chief Insights Officer",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: team_member_8,
     },
   ];
@@ -79,21 +79,21 @@ const About = () => {
       name: "Dr. James Segars",
       role: "Director, Division of Women's Health Research, Johns Hopkins Medicine",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: advisor_image_1,
     },
     {
       name: "Dr. Bhuchitra Singh",
       role: "Director of Clinical Research, Seegars Jones Laboratory, Johns Hopkins Medicine",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: advisor_image_2,
     },
     {
       name: "Ashley Duque Kienzle",
       role: "CEO, Almma Health",
       description:
-        "There are many reasons to get down and start to get depressed about your situation.",
+        "",
       image: advisor_image_3,
     },
     
