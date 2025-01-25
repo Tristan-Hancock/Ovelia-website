@@ -3,6 +3,8 @@ import axios from "axios";
 
 import achievement1 from "../assets/images/achievement_1.png";
 import achievement2 from "../assets/images/mng_grant.jpg";
+import achievement3 from '../assets/images/achievement_3.png';
+import cohort from '../assets/images/cohort.png';
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
 import Footer from "../components/Footer";
@@ -26,7 +28,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/submit", {
+      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/newsletter", {
         email,
       });
 
@@ -207,18 +209,37 @@ const Home = () => {
 
       {/* Achievements */}
       <section className="bg-hero">
-        <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
-          OUR ACHIEVEMENTS
-        </h1>
+  <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
+    OUR ACHIEVEMENTS
+  </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
-          <img src={achievement1} alt="" />
-          <div className="flex flex-col items-center justify-center">
-          <img src={achievement2} alt="" className="w-80 h-36 object-contain"/>
-          <p className="text-button_white font-normal font-poppins p-4 text-center">Winners of the Maroon & Gold Grant</p>
-          </div>
-        </div>
-      </section>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 p-4">
+    {/* Achievement 1 */}
+    <img src={achievement1} alt="Achievement 1" />
+
+    {/* Achievement 2 */}
+    <div className="flex flex-col items-center justify-center">
+      <img src={achievement2} alt="Achievement 2" className="w-80 h-36 object-contain" />
+      <p className="text-button_white font-normal font-poppins p-4 text-center">
+        Winners of the Maroon & Gold Grant
+      </p>
+    </div>
+
+    {/* Achievement 3 */}
+    <div className="flex flex-col items-center justify-center">
+  <img src={cohort} alt="Achievement 3" className="w-80 h-auto object-contain rounded-lg shadow-lg" />
+  <p className="text-button_white font-normal font-poppins text-xl text-center pt-4">
+    2024 Fall Cohort
+  </p>
+  <p className="text-button_white font-light font-poppins text-base text-center">
+    PAVA Center Fuel Accelerator
+  </p>
+</div>
+
+
+  </div>
+</section>
+
 
       {/* Know more section*/}
       <section className="bg-radial-gradient" >

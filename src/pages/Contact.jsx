@@ -9,36 +9,51 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if(!name | !email | !reason){
+  
+    if (!name || !email || !reason) {
       alert("Please fill in all the fields");
       return;
     }
-
-    try{
-      console.log('Sending data:', { name, email, reason });
-      const response = await axios.post("https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/contact", {
-        email,
+  
+    try {
+      // Log the request details
+      console.log('Sending request with data:', {
         name,
+        email,
         reason
-      },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    }
+      });
+  
+      const response = await axios({
+        httpMethod: 'POST', // Explicitly set method
+        url: 'https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/contact',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          name,
+          email,
+          reason
+        }
+      });
+  
+      // Handle success
+      console.log('Response:', response);
+      setMessage("Form submitted successfully!");
       
-    )}catch (err){
-      console.error("Full error:", {
-    data: err.response?.data,
-    status: err.response?.status,
-    headers: err.response?.headers,
-    config: err.config // This will show what was actually sent
-  });
-  setMessage("Failed to submit form. Please try again.");
+      // Clear the form
+      setName('');
+      setEmail('');
+      setReason('');
+  
+    } catch (err) {
+      console.error("Error details:", {
+        status: err.response?.status,
+        data: err.response?.data,
+        headers: err.response?.headers
+      });
+      setMessage("Failed to submit form. Please try again.");
     }
-  } 
+  };
 
   return (
     <div className="flex items-center justify-center bg-hero h-screen ">
@@ -58,17 +73,17 @@ const Contact = () => {
           <form className="flex flex-col items-center sm:w-1/2 mt-4 space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
-              className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-2 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+              className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-4 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
               placeholder="Your Name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type="email"
-              className="bg-hero border-button_white border rounded mt-2 py-1 outline-none px-2 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
-              placeholder="Rour Email"
+              className="bg-hero border-button_white border rounded mt-2 py-1 outline-none px-4 text-button_white w-full placeholder:text-start placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+              placeholder="Your Email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <select className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-1 text-button_white w-full placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
+            <select className="bg-hero border-button_white border rounded mt-2 py-1  outline-none px-4 text-button_white w-full placeholder:text-button_white placeholder:font-poppins placeholder:font-normal"
             onChange={(e) => setReason(e.target.value)} value={reason}>
               <option value="" disabled selected>
                 Reason
