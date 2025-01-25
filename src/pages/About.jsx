@@ -11,7 +11,7 @@ import team_member_3 from "../assets/images/team_members/Rajshri_Sukhani.jpg"
 import team_member_4 from "../assets/images/team_members/Emily_Chen.jpg"
 import team_member_5 from "../assets/images/team_members/Amika_Patel.jpg"
 import team_member_6 from "../assets/images/team_members/Aaryan_Mahipal.png"
-// import team_member_7 from "../assets/images/team_members/Nuha_Contractor.jpg"
+import team_member_7 from "../assets/images/team_members/Nuha_Contractor.jpg"
 import team_member_8 from "../assets/images/team_members/Heet_Jaiswal.jpg"
 
 const About = () => {
@@ -63,7 +63,7 @@ const About = () => {
       role: "Chief Design Officer",
       description:
         "",
-      image: image,
+      image: team_member_7,
     },
     {
       name: "Heet Jaiswal",
@@ -139,14 +139,14 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 mt-10 pt-10 lg:px-28 px-6 gap-10 grid-cols-1 pb-20 ">
+        <div className="grid md:grid-cols-2 mt-10 pt-10 lg:px-28 px-6 gap-12 grid-cols-1 pb-20 ">
           {teamMembers.map((member, index) => (
             <div
               key={index}
               className="flex lg:flex-row items-center justify-center flex-col"
             >
               <img src={member.image} alt={`${member.name}-img`} className="h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-56 lg:w-56 object-contain rounded-full" />
-              <div className="flex flex-col justify-start lg:ml-5 mt-4 sm:mt-0 max-w-sm text-center md:text-left ">
+              <div className="flex flex-col justify-start lg:ml-5 mt-4 sm:mt-0 max-w-sm text-center md:text-left w-full">
                 <h1 className="font-poppins font-medium text-2xl text-center mt-5">
                   {member.name}
                 </h1>
