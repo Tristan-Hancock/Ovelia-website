@@ -61,14 +61,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-hero h-screen ">
-      <div className="flex flex-col items-center justify-center text-center sm:-mt-14">
-        <div className="flex flex-col items-center sm:w-[50%] p-2">
-          <h1 className="text-button_white font-poppins text-4xl font-semibold mb-6">
+    <div className="flex items-center justify-start bg-hero min-h-screen ">
+      <div className="flex flex-col items-center justify-center text-center ">
+        <div className="flex flex-col items-center sm:w-[50%] ">
+          <h1 className="text-button_white font-poppins text-4xl font-semibold mb-6 mt-16 lg:mt-0 lg:-mt-8 p-2 sm:p-2">
             Get In Touch
           </h1>
           <p className="text-button_white font-poppins text-xl font-normal p-5">
-            We'd love to hear from you! Whether you have a question, are
+            We'd love to hear from you! <br/> Whether you have a question, are
             interested in collaborating, or want to join our team, we're here to
             connect. Reach out for inquiries, partnership opportunities, or
             career possibilities—we're excited to hear your ideas and explore
@@ -106,7 +106,7 @@ const Contact = () => {
               <option value="Career Possibilities">Career Possibilities</option>
             </select>
             <button
-              className=" bg-[#bbbffe] px-4 py-1 w-full rounded"
+              className=" bg-[#bbbffe] px-4 py-1 w-full rounded text-start"
               disabled={loading}
             >
               <span className="text-navbar_text font-poppins font-semibold ">
@@ -114,8 +114,8 @@ const Contact = () => {
               </span>
             </button>
           </form>
-          <p className="font-poppins text-xl font-normal text-button_white mt-10">
-            email us at info@ovelia.health
+          <p className="font-poppins text-xl font-normal text-button_white mt-10 italic">
+            Email us at info@ovelia.health
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 
-import achievement1 from "../assets/nucleate.png";
-import achievement2 from "../assets/images/mng_grant.jpg";
+import achievement1 from "../assets/images/nucleate-removebg-preview.png";
+import achievement2 from "../assets/images/mng_grant-removebg-preview.png";
 import cohort from "../assets/images/cohort.png";
 import appstore_svg from "../assets/svg/appstore.svg";
 import playstore_svg from "../assets/svg/playstore.svg";
@@ -64,19 +64,21 @@ const Home = () => {
             </p>
           </div>
           <button
-            className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-bold mt-8"
+            className="bg-navbar_text py-4 px-6 rounded-full text-xl leading-4 text-button_white font-dmSans font-normal italic mt-8"
             onClick={scrollToGetApp}
           >
             Sign Up For Beta Access
           </button>
 
           <p className="font-poppins font-normal sm:text-2xl text-lg  text-navbar_text pt-32 pb-14">
-            Polycystic Ovarian Syndrome (PCOS) affects up to 20% of women of
-            reproductive age (18-45), yet 70% of cases remain undiagnosed due to
-            limited awareness and masked symptoms from birth control use. The
-            healthcare system lacks an accessible early detection method,
-            leaving millions at risk. Ovelia bridges this gap, empowering women
-            to take charge of their health and seek timely care.
+            Ovelia is a digital tool that helps women assess their risk of
+            Polycystic Ovarian Syndrome (PCOS) through a clinically vetted
+            questionnaire developed with experts from Johns Hopkins. The app
+            offers tools for menstrual tracking, symptom management, and access
+            to a supportive community, empowering women to take charge of their
+            reproductive health. By raising awareness and providing early
+            detection resources, Ovelia aims to address the widespread
+            underdiagnosis of PCOS.
           </p>
         </div>
       </section>
@@ -113,40 +115,40 @@ const Home = () => {
         </div>
 
         <h1 className="font-dmSans font-bold text-black text-3xl text-center pt-20">
-          PCOS affects 1-in-10 women
+          PCOS AFFECTS 1-IN-10 WOMEN
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-4 pt-10 pb-20 px-5 space-y-6 sm:space-y-0">
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
             {/* <img src={placeholder} alt="" /> */}
-            <h1 className="font-lato font-extrabold text-5xl">70%</h1>
+            <h1 className="font-lato font-extrabold text-7xl">70%</h1>
             <p className="font-poppins font-normal text-base ">
-              70% of women with PCOS go undiagnosed
+              women with PCOS go undiagnosed
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
             {/* <img src={placeholder} alt="" /> */}
-            <h1 className="font-lato font-extrabold text-5xl">3X</h1>
+            <h1 className="font-lato font-extrabold text-7xl">3X</h1>
             <p className="font-poppins font-normal text-base ">
-              The risk of endometrial cancer is tripled for women with PCOS
+              Increased risk of endometrial cancer
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
             {/* <img src={placeholder} alt="" /> */}
-            <h1 className="font-lato font-extrabold text-5xl">50%</h1>
+            <h1 className="font-lato font-extrabold text-7xl">50%</h1>
             <p className="font-poppins font-normal text-base ">
-              There is a 50% likelihood of developing T2DM (Type 2 diabetes
-              mellitus) or pre-diabetes before the age of 40
+              likelihood of developing Type 2 diabetes mellitus or pre-diabetes
+              before the age of 40
             </p>
           </div>
 
           <div className="flex flex-col items-center w-4/6 mx-auto text-center">
             {/* <img src={placeholder} alt="" /> */}
-            <h1 className="font-lato font-extrabold text-5xl">50%</h1>
+            <h1 className="font-lato font-extrabold text-7xl">50%</h1>
             <p className="font-poppins font-normal text-base ">
-              There is a 50% higher risk of developing heart diseases
+              higher risk of developing heart diseases
             </p>
           </div>
         </div>
@@ -203,14 +205,14 @@ const Home = () => {
       {/* Get the App*/}
       <section className="bg-custom-radial pb-20 " ref={getAppSectionRef}>
         <h1 className="font-poppins font-semibold text-4xl text-center pt-20">
-          Get the app
+          GET THE APP
         </h1>
 
         <div className="flex sm:flex-row flex-col items-center justify-center md:space-x-28 mt-20 sm:px-10 gap-10 p-5">
           <a href="">
             <img src={appstore_svg} alt="" />
           </a>
-          <a href="">
+          <a href="https://play.google.com/apps/internaltest/4700854603946333471" target="_blank" >
             <img src={playstore_svg} alt="" />
           </a>
         </div>
@@ -218,7 +220,7 @@ const Home = () => {
 
       {/* Achievements */}
       <section className="bg-hero">
-        <h1 className="text-light_periwinkle font-poppins font-medium text-2xl text-center pt-10">
+        <h1 className="text-white font-poppins font-medium text-4xl text-center pt-10">
           OUR ACHIEVEMENTS
         </h1>
 
@@ -245,9 +247,11 @@ const Home = () => {
               alt="Achievement 2"
               className="w-80 h-36 object-contain"
             />
-            <p className="text-button_white font-normal font-poppins p-4 text-center">
-              Winners of the Maroon & Gold Grant
-            </p>
+            <div className="text-button_white font-normal font-poppins p-4 text-center mt-4 text-lg">
+              <span className="font-bold text-xl mt-5">Winners</span>
+              <br />
+              Maroon & Gold Grant
+            </div>
           </div>
 
           {/* Achievement 3 */}
@@ -273,10 +277,10 @@ const Home = () => {
         <div className="flex flex-col items-center justify-start pt-20 pb-36">
           <div className="flex flex-col items-center md:w-[450px] w-[80%]">
             <h1 className="font-poppins font-semibold text-3xl text-hero text-center">
-              Want to know more?
+              WANT TO KNOW MORE?
             </h1>
             <p className="font-poppins font-normal text-2xl text-navbar_text mt-10 text-center">
-              sign up for our exclusive mailing list.
+              Sign up for our exclusive mailing list
             </p>
 
             <form
@@ -285,7 +289,7 @@ const Home = () => {
             >
               <input
                 type="email"
-                className="outline-none border border-navbar_text bg-transparent rounded p-2 mt-5 w-full placeholder:text-navbar_text placeholder:font-rubiks placeholder:font-normal "
+                className="outline-none border border-navbar_text bg-transparent rounded p-2 mt-5 w-full placeholder:text-navbar_text placeholder:font-rubiks placeholder:font-normal placeholder:text-center"
                 placeholder="Your Email"
                 onChange={(e) => setEmail(e.target.value)}
               />

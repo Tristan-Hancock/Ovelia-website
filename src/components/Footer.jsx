@@ -8,11 +8,7 @@ import Youtube from "../assets/svg/youtube.svg";
 
 const Footer = () => {
   return (
-    <div className="flex md:flex-row items-center justify-between px-4 flex-col md:divide-x-2 py-4 divide-hero space-y-4 md:space-y-0">
-      <div>
-        <img src={logo_svg} alt="" />
-      </div>
-
+    <div className="flex md:flex-row items-center justify-between px-4 flex-col py-4 space-y-4 md:space-y-0 h-20">
       <div className="font-dmSans font-bold text-lg pl-3">
         <a href="">Privacy Policy</a>
       </div>
@@ -22,24 +18,29 @@ const Footer = () => {
       </div>
 
       <div className="font-dmSans font-bold text-lg pl-3">
-        <a href="https://docs.google.com/document/d/1fF73Tf59wI91Ecfr_HTcRQK8QE8LkDyNYniX_7XYyfw/edit?usp=sharing" target="_blank">Sources</a>
+        <a
+          href="https://docs.google.com/document/d/1fF73Tf59wI91Ecfr_HTcRQK8QE8LkDyNYniX_7XYyfw/edit?usp=sharing"
+          target="_blank"
+        >
+          Sources
+        </a>
       </div>
 
       <div>
         <div className="grid grid-cols-4 sm:grid-cols-5 gap-10 hover:cursor-pointer">
-          <a href="">
+          {/* <a href="">
             <img src={Facebook} alt="" className="h-7" />
-          </a>
-          <a href="">
+          </a> */}
+          <a href="https://www.linkedin.com/company/ovelia-health/" target="_blank">
             <img src={LinkedIn} alt="" className="h-7" />
           </a>
-          <a href="">
+          <a href="https://x.com/OveliaCo" target="_blank">
             <img src={Twitter} alt="" className="h-7" />
           </a>
-          <a href="">
+          <a href="https://www.youtube.com/@Ovelia-Health" target="_blank">
             <img src={Youtube} alt="" className="h-7" />
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/ovelia.us/" target="_blank">
             <img src={Instagram} alt="" className="h-7" />
           </a>
         </div>
