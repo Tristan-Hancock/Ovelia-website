@@ -5,6 +5,7 @@ const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ const Newsletter = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/newsletter",
+        "https://ovelia-backend.onrender.com/newsletter",
         {
           email,
         }
@@ -87,6 +88,8 @@ const Newsletter = () => {
                 </span>
               </button>
             </form>
+
+            
 
             <p className="text-button_white font-poppins text-xl font-normal  p-5">
               You deserve to feel empowered, informed, and supported every step

@@ -163,7 +163,7 @@ const About = () => {
                   className="h-32 w-32 sm:h-40 sm:w-40 md:h-52 md:w-52 lg:h-56 lg:w-56 rounded-full object-contain"
                 />
                 <div className="flex sm:justify-start flex-col ">
-                  <h1 className="font-rubiks font-medium text-2xl text-button_white text-center mt-5">
+                  <h1 className="font-poppins font-medium text-2xl text-button_white text-center mt-5">
                     {advisors.name}
                   </h1>
                   <p className="font-rubiks text-light_periwinkle font-medium text-sm mt-2 text-center">

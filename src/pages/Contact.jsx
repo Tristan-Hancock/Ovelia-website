@@ -24,18 +24,13 @@ const Contact = () => {
         reason,
       });
 
-      const response = await axios({
-        httpMethod: "POST", // Explicitly set method
-        url: "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/contact",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: {
+      const response = await axios.post("https://ovelia-backend.onrender.com/contact",
+        {
           name,
           email,
           reason,
         },
-      });
+      );
 
       // Handle success
       console.log("Response:", response);

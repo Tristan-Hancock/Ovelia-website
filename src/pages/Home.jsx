@@ -30,7 +30,7 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://8m3t11sbkg.execute-api.us-east-2.amazonaws.com/prod/newsletter",
+        "https://ovelia-backend.onrender.com/newsletter",
         {
           email,
         }
@@ -40,7 +40,7 @@ const Home = () => {
       alert("Thank you for registering!");
       setEmail("");
     } catch (error) {
-      console.error("Error submitting email:", error);
+      
       setMessage("Failed to sign up. Please try again.");
     } finally {
       // Reset the button state after 30 seconds
