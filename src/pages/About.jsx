@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../components/Footer";
 import articleImage from "../assets/images/Full-Fall-2024-Cohort-new.png";
 import articleImage2 from "../assets/images/article_image.jpg";
@@ -13,6 +12,8 @@ import team_member_5 from "../assets/images/team_members/Amika_Patel.jpg";
 import team_member_6 from "../assets/images/team_members/Aaryan_Mahipal.png";
 import team_member_7 from "../assets/images/team_members/Nuha_Contractor.jpg";
 import team_member_8 from "../assets/images/team_members/Heet_Jaiswal.jpg";
+import team_member_9 from "../assets/images/team_members/Zach_Park.jpg"
+import team_member_10 from "../assets/images/team_members/Zalak_patel.jpg"
 
 const About = () => {
   const teamMembers = [
@@ -64,6 +65,18 @@ const About = () => {
       description: "",
       image: team_member_8,
     },
+    {
+      name: "Zach Park",
+      role: "Product Design Lead",
+      description: "",
+      image: team_member_9,
+    },
+    {
+      name: "Zalak Patel",
+      role: "Chief Marketing Officer",
+      description: "",
+      image: team_member_10,
+    },
   ];
 
   const advisors = [
@@ -98,13 +111,13 @@ const About = () => {
 
           <iframe
             src="https://www.youtube.com/embed/13LZjfKUq5Q?si=99bjxo-EHbXKSWvh"
-            frameborder="0"
+            frameBorder="0"
             webkitallowfullscreen
             className="w-11/12 h-[300px] sm:h-[450px] md:h-[600px] lg:h-[720px] xl:h-[720px] p-6 rounded "
           ></iframe>
 
           <p className="md:w-7/12 font-poppins font-normal text-xl p-10 pb-20 mt-16 text-center">
-          Through our own experiences, we realized how difficult it can be to understand and manage Polycystic Ovarian Syndrome (PCOS). One day, we were sharing our frustrations about the lack of accessible, reliable resources for early detection and support—and it hit us. Why not create something that truly empowers women to take charge of their reproductive health? That's how Ovelia came to life—a space where women can assess, track, and manage their health, all while feeling supported every step of the way.
+          Through our own experiences, we realized how difficult it can be to understand and manage Polycystic Ovarian Syndrome (PCOS). One day, we were sharing our frustrations about the lack of accessible, reliable resources for early detection and support—and it hit us. Why not create something that truly empowers women to take charge of their reproductive health? That&apos;s how Ovelia came to life—a space where women can assess, track, and manage their health, all while feeling supported every step of the way.
           </p>
         </div>
       </section>
@@ -220,7 +233,7 @@ const About = () => {
                 TECHNICAL.LY
               </div>
               <p className="font-poppins font-normal text-navbar_text text-lg mt-5 hover:underline cursor-pointer">
-                Johns Hopkins' Pava Center picks promising startups in AI,
+                Johns Hopkins&apos; Pava Center picks promising startups in AI,
                 healthcare and music
               </p>
             </a>
